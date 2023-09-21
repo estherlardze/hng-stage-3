@@ -1,16 +1,31 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
+import {auth} from '../component/firebase'
+import {CreateUserWithEmailAndPassword} from 'firebase/auth';
 
 
 export default function Signup(){
+    const [email, setemail] = useState('')
+    const [password, setPassword] = useState('')
+    const navigate = useNavigate();
+
+    const handleSignup = (e) => {
+        e.preventDefault();
+        CreateUserWithEmailAndPassword(auth, email, password)
+        .then(data => {
+         console.log(data)
+         navigate('/login')
+        }.catch(err => alert(err.code))
+    }
+    
     return(
       <div className='w-full max-w-xs mx-auto mt-[100px]'>
-        <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSignup}>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
-                Username
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+               Email
             </label>
-            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="email" placeholder="Username"/>
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="email" placeholder="Email"/>
           </div>
           <div className="mb-6">
              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
