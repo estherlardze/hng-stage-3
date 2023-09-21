@@ -21,7 +21,7 @@ export default function Login(){
                 Email
             </label>
             <input value={email} onChange={(e) => e.target.value} 
-               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" required/>
+               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="email" placeholder="Username" required/>
           </div>
 
           <div className="mb-6">
