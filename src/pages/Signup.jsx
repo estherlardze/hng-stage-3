@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 
 export default function Signup(){
@@ -9,7 +10,7 @@ export default function Signup(){
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
                 Username
             </label>
-            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username"/>
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="email" placeholder="Username"/>
           </div>
           <div className="mb-6">
              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
@@ -21,9 +22,9 @@ export default function Signup(){
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
               Sign Up
             </button>
-            <a className="inline-block align-baseline font-bold text-sm mt-2  text-blue-500 hover:text-blue-800" href="#">
+            <Link to='/login' className="inline-block align-baseline font-bold text-sm mt-2  text-blue-500 hover:text-blue-800" href="#">
                Already have an account ? Login
-            </a>
+            </Link>
          </div>
       </form>
 </div>
