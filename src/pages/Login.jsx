@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import {auth} from '../component/firebase'
+import {signInWithEmailAndPassword} from 'firebase/auth';
+
 
 
 export default function Login(){
@@ -8,7 +11,8 @@ export default function Login(){
 
     const handleLogin = (e) => {
         e.preventDefault();
-        firebase.auth().signInWithEmailAndPassword(email, password)
+        signInWithEmailAndPassword(auth, email, password)
+        .then(data => console.log(data))
     } 
 
 
