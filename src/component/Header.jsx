@@ -9,16 +9,14 @@ const Header = ({search, setSearch, setFilteredItems}) => {
     e.preventDefault();
 
     const filteredImages = images.filter((item) => {
-     if(!search) return item
-     
-     else if(item.tag.toLowerCase().includes(search.toLowerCase()))
-     {
-      setFilteredItems(filteredImages)
-     }    
+
+     const filteredImages = item.tag.toLowerCase().includes(search.toLowerCase())
+     setFilteredItems(filteredImages)  
+     console.log(filteredImages)     
   })
-    console.log(filteredImages)
    
     setSearch('')
+    return(filteredImages)
   }
 
   return (

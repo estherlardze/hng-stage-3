@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {database} from '../component/firebase'
 import {signInWithEmailAndPassword} from 'firebase/auth';
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, Link} from 'react-router-dom'
 
 
 
@@ -26,7 +26,7 @@ export default function Login(){
 
 
     return(
-      <div className='w-full max-w-xs mx-auto mt-[100px]'>
+      <div className='w-full max-w-xs mx-auto mt-[100px] '>
          <h1 className='text-center text-2xl font-semibold '>Log in with Email and password</h1>
         <form className="bg-white shadow-xl rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleLogin}>
 
@@ -51,6 +51,9 @@ export default function Login(){
               Log in
             </button>
          </div>
+         <Link to='/signup' className='text-black-500 mt-[20px] font-bold'>
+           Don't have an account? Create one
+        </Link>
 
       </form>
 </div>

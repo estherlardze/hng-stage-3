@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useNavigate, Link} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import {database } from '../component/firebase'
 import { createUserWithEmailAndPassword } from "firebase/auth"
 
@@ -15,7 +15,7 @@ export default function Signup(){
 
      createUserWithEmailAndPassword(database, email, password).then((data) => {
       console.log(data, "authData");
-      navigate('/login')
+      navigate('/home')
     })
     .catch((error) => {
       console.error(error)
@@ -47,9 +47,7 @@ export default function Signup(){
               Sign Up
             </button>
          </div>
-        <Link to='/login' className='text-black-500 mt-[20px] font-bold'>
-          Already have an account? Login
-        </Link>
+        
       </form>
 </div>
     )
