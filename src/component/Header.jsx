@@ -25,7 +25,7 @@ const Header = ({search, setSearch, setFilteredItems}) => {
        <input type="text" placeholder='search by tag...' value={search} onChange={(e) => setSearch(e.target.value)}
          className='md:w-[500px] w-[250px] rounded-2xl py-[5px] px-[10px] outline-none border border-solid'/>
       </form>
-      <Link to='/login'>
+      <Link to='/'>
         <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Logout</button>
       </Link>
       </div>
