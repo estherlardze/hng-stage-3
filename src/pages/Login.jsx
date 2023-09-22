@@ -27,7 +27,7 @@ export default function Login(){
 
     return(
       <div className='w-full max-w-xs mx-auto mt-[100px] '>
-         <h1 className='text-center text-2xl font-semibold '>Log in with Email and password</h1>
+         <h1 className='text-center text-2xl font-semibold mb-[15px]'>Log in with Email and password</h1>
         <form className="bg-white shadow-xl rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleLogin}>
 
           <div className="mb-4">
@@ -51,7 +51,7 @@ export default function Login(){
               Log in
             </button>
          </div>
-         <Link to='/signup' className='text-black-500 mt-[20px] font-bold'>
+         <Link to='/signup' className='text-black-500 mt-[20px] text-[#474746]'>
            Don't have an account? Create one
         </Link>
 

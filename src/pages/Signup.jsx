@@ -26,7 +26,7 @@ export default function Signup(){
     
     return(
       <div className='w-full max-w-xs mx-auto mt-[100px]'>
-        <h1 className='text-center text-3xl font-semibold '>Sign Up</h1>
+        <h1 className='text-center text-3xl font-semibold mb-[15px]'>Sign Up</h1>
         <form className="bg-white shadow-xl rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSignup}>
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">

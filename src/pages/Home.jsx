@@ -14,7 +14,7 @@ const Home = () => {
     <div className='w-full max-w-[1000px] mx-auto mt-[20px]'>
         <Header search={search} setSearch={setSearch} setFilteredItems={setFilteredItems}/>
         <Gallery search={search} filteredItems={filteredItems} />
-        <Footer />
+        <Footer search={search}/>
     </div>
   )
 }
