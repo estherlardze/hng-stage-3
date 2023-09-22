@@ -3,7 +3,7 @@ import { images } from '../pages/index';
 import { DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd'
 
 const Gallery = ({search, filteredItems}) => {
-  const [characters, setCharacters] = useState(finalSpaceCharacters)
+  
   return (
     <DragDropContext onDragEnd={(result) => console.log(result)} >
        <Droppable droppableId="characters">
