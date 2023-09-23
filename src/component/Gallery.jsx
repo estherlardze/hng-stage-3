@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDrag, useDrop } from 'react-dnd';
-import ImageCard from './ImageCard'
+import Loader from './Loader';
 import { images} from '../pages/index';
 
 const Gallery = ({ search, isLoading, setIsLoading}) => {
@@ -49,11 +49,18 @@ const Gallery = ({ search, isLoading, setIsLoading}) => {
     );
   };
   return (
+    <div>
+      { isLoading ? (
+        <Loader />
+      ) : (
     <div className='flex flex-wrap gap-[20px] mx-[30px] md:mx-[auto]'>
-      {image.map((item, index) => (
+      { !search && image.map((item, index) => (
         <Image key={item.id} item={item} index={index} />
       ))}
     </div>
-  );
+      )
+}
+    </div>  
+      );
 };
 export default Gallery;
