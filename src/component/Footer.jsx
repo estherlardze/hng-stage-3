@@ -2,10 +2,10 @@ import React from 'react';
 import {AiOutlineInstagram, AiFillGithub, AiFillLinkedin, AiOutlineTwitter} from 'react-icons/ai';
  import {Link} from 'react-router-dom'
 
-const Footer = ({search}) => {
+const Footer = ({search, isLoading}) => {
   return (
     <div className='flex flex-col text-center mt-[70px] mb-[20px]'>
-        {!search && 
+        {!search || !isLoading && 
         <div className='flex gap-[20px] mx-auto'>
          <Link to='https://github.com/estherlardze'>
           <AiFillGithub size={29}/>
@@ -19,7 +19,7 @@ const Footer = ({search}) => {
           </Link>
         </div>
 }
-         {!search && <p className='text-gray-500'>By Esther Lardze</p>}
+         {!search ||  !isLoading &&  <p className='text-gray-500'>By Esther Lardze</p>}
     </div>
   )
     }

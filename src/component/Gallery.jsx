@@ -1,11 +1,20 @@
-import React, { useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import { images } from '../pages/index';
 import ImageCard  from './ImageCard';
+import Loader from './Loader'
 import {DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd'
 
 
-const Gallery = ({search}) => {
+const Gallery = ({search, isLoading, setIsLoading}) => {
   const [image, setImage] = useState(images)
+
+ 
+  useEffect(() => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); 
+  }, []);
 
   function handleOnDragEnd(result) {
     if (!result.destination) return;
@@ -17,7 +26,10 @@ const Gallery = ({search}) => {
     setImage(items);
   }
   return (
-    <DragDropContext onDragEnd={handleOnDragEnd}>
+    <div>
+      {isLoading ? (<Loader />)
+     :
+   ( <DragDropContext onDragEnd={handleOnDragEnd}>
       <Droppable droppableId="characters">
       {(provided) => (
        <div className='flex flex-wrap gap-[20px] mx-[30px] md:mx-[auto]' {...provided.droppableProps}
@@ -43,5 +55,7 @@ const Gallery = ({search}) => {
         )}
        </Droppable>
     </DragDropContext> 
+  )}
+  </div>
  ) } 
 export default Gallery
