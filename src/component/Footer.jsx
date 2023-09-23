@@ -5,7 +5,7 @@ import {AiOutlineInstagram, AiFillGithub, AiFillLinkedin, AiOutlineTwitter} from
 const Footer = ({search, isLoading}) => {
   return (
     <div className='flex flex-col text-center mt-[70px] mb-[20px]'>
-        {!search || !isLoading && 
+        {(!search || !isLoading) && 
         <div className='flex gap-[20px] mx-auto'>
          <Link to='https://github.com/estherlardze'>
           <AiFillGithub size={29}/>
@@ -19,7 +19,7 @@ const Footer = ({search, isLoading}) => {
           </Link>
         </div>
 }
-         {!search ||  !isLoading &&  <p className='text-gray-500'>By Esther Lardze</p>}
+         {(!search ||  !isLoading) &&  <p className='text-gray-500'>By Esther Lardze</p>}
     </div>
   )
     }
