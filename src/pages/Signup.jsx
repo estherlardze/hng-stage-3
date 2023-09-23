@@ -7,6 +7,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth"
 export default function Signup(){
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [error, setError] = useState(null);
 
     const navigate = useNavigate();
 
@@ -18,7 +19,8 @@ export default function Signup(){
       navigate('/home')
     })
     .catch((error) => {
-      console.error(error)
+      console.log(error)
+      setError(error.message);
       // ..
     });
   }
@@ -47,7 +49,7 @@ export default function Signup(){
               Sign Up
             </button>
          </div>
-        
+         {error && <p className='text-red-500 font-semibold mt-[10px]'> {error.slice(15)}</p>}
       </form>
 </div>
     )

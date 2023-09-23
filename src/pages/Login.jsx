@@ -9,6 +9,8 @@ export default function Login(){
 
   const [email, setemail] = useState('')
   const [password, setPassword] = useState('')
+  const [error, setError] = useState(null);
+
 
   const navigate = useNavigate();
 
@@ -21,6 +23,7 @@ export default function Login(){
   })
   .catch((error) => {
     console.error(error)
+    setError(error.message);
   });
 }
 
@@ -45,7 +48,7 @@ export default function Login(){
              <input value={password} onChange={(e) => setPassword(e.target.value)} 
                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder='password' required/>
           </div>
-
+          {error && <p className='text-red-500 font-semibold mb-[10px]'> {error.slice(15)}</p>}
          <div className="flex flex-col items-center justify-between">
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
               Log in
