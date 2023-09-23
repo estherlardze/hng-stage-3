@@ -18,10 +18,10 @@ const Header = ({search, setSearch}) => {
     <div className='flex justify-between mb-[30px]'>
       <form onSubmit={(e) => e.preventDefault()}>
        <input type="text" placeholder='search by tag...' value={search} onChange={(e) => setSearch(e.target.value)}
-         className='md:w-[500px] w-[250px] rounded-2xl py-[5px] px-[10px] outline-none border border-solid'/>
+         className='md:w-[500px] w-[200px] sm:w-[250px] rounded-2xl py-[5px] px-[10px] outline-none border border-solid'/>
       </form>
       <Link to='/'>
-        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Logout</button>
+        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded'>Logout</button>
       </Link>
       </div>
 
